@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>爱游戏 · 专题视角</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f8f6;
+            font-family: 'Georgia', 'Times New Roman', '宋体', 'SimSun', serif;
+            color: #2c2a28;
+            line-height: 1.7;
+            padding: 2rem 1.2rem 3rem;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* hero 横幅 — 极简图文氛围 */
+        .hero {
+            margin-bottom: 3.2rem;
+            border-bottom: 1px solid #d6d2cb;
+            padding-bottom: 2.2rem;
+            position: relative;
+        }
+
+        .hero .label {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #9a8f84;
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            background: #ede9e3;
+            padding: 0.1rem 1rem;
+            border-radius: 30px;
+        }
+
+        .hero h1 {
+            font-size: 3.4rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: #1f1c1a;
+        }
+
+        .hero h1 small {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            color: #7f736a;
+            margin-top: 0.6rem;
+            border-top: 1px dotted #ccc6be;
+            padding-top: 0.6rem;
+        }
+
+        .hero p {
+            margin-top: 1.6rem;
+            font-size: 1.05rem;
+            color: #3f3a36;
+            max-width: 90%;
+        }
+
+        /* 背景说明卡片（窄幅留白） */
+        .context-card {
+            background: #f1eeea;
+            padding: 2.2rem 2rem;
+            margin-bottom: 3rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .context-card h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #302c28;
+            margin-bottom: 1.2rem;
+            border-left: 3px solid #b7aa9b;
+            padding-left: 1.2rem;
+        }
+
+        .context-card p {
+            font-size: 1rem;
+            color: #3d3833;
+            margin-bottom: 1rem;
+        }
+
+        .context-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 三段自然介绍 (杂志短文) */
+        .feature-block {
+            margin-bottom: 3.6rem;
+        }
+
+        .feature-item {
+            margin-bottom: 2.2rem;
+            padding-bottom: 1.8rem;
+            border-bottom: 1px solid #e1dbd3;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .feature-item h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #2d2925;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .feature-item h3 .number {
+            font-size: 0.9rem;
+            color: #b1a393;
+            margin-right: 0.8rem;
+            font-weight: 300;
+        }
+
+        .feature-item p {
+            font-size: 0.98rem;
+            color: #3a3530;
+            margin-bottom: 0.6rem;
+        }
+
+        .feature-item p strong {
+            font-weight: 600;
+            color: #2c2621;
+        }
+
+        .feature-item .insight {
+            background: #f6f3ef;
+            padding: 0.8rem 1.4rem;
+            margin-top: 0.8rem;
+            border-radius: 40px;
+            display: inline-block;
+            font-size: 0.9rem;
+            color: #5f554b;
+        }
+
+        /* 页尾访问提示 — 杂志脚标风格 */
+        .footer-note {
+            margin-top: 3.8rem;
+            padding-top: 2rem;
+            border-top: 1px solid #d6d0c8;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #5b534b;
+        }
+
+        .footer-note .visit-line {
+            background: #eae5de;
+            display: inline-block;
+            padding: 0.4rem 2rem 0.6rem;
+            border-radius: 40px;
+            margin-bottom: 1.4rem;
+        }
+
+        .footer-note .small-quote {
+            font-style: italic;
+            color: #7b7166;
+            font-size: 0.9rem;
+            margin-top: 1.2rem;
+        }
+
+        .footer-note .meta {
+            margin-top: 1.6rem;
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            color: #978e84;
+        }
+
+        a {
+            color: #4f463d;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 0.5px;
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            color: #12100e;
+            text-decoration-color: #a09080;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.5rem 0.9rem 2.5rem;
+            }
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .hero p {
+                max-width: 100%;
+                font-size: 0.98rem;
+            }
+            .context-card {
+                padding: 1.6rem 1.2rem;
+            }
+            .context-card h2 {
+                font-size: 1.3rem;
+                padding-left: 0.8rem;
+            }
+            .feature-item h3 {
+                font-size: 1.1rem;
+            }
+            .footer-note .visit-line {
+                padding: 0.3rem 1.2rem 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 small {
+                font-size: 1rem;
+            }
+            .feature-item .insight {
+                font-size: 0.82rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 横幅 -->
+    <div class="hero">
+        <span class="label">专题 · 语境</span>
+        <h1>
+            爱游戏
+            <small>从偏好到日常，从机制到叙事</small>
+        </h1>
+        <p>当一个行为被冠以“爱”的前缀，它便不再只是消遣。游戏作为一种复合媒介，承载着策略、即兴、社交与叙事的多重可能。本期专题试图剥离泛化的概念，回到语境中理解“爱游戏”三个字背后的逻辑与温度。</p>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="context-card">
+        <h2>为何是“爱”，而非“玩”</h2>
+        <p>中文里“玩”指向一种轻量的参与，而“爱”则暗示持续投入与情感赋值。从早期的像素闯关到当代的开放世界，人们之所以持续回到某个游戏，往往不是因为通关的成就，而是因为在那段交互时间里，游戏提供了一种有序的、可被理解的控制感，以及偶尔的意外之美。</p>
+        <p>这种情感连接并不浮夸。它可能表现为深夜的一次资源整理，或是在某个场景里反复踱步。当我们谈论<a href="https://site-m-igame.com">爱游戏</a>时，谈论的实际上是一种主动选择的行为：你愿意把有限的时间，分配给一种被设计过的、有规则的美学体验。</p>
+    </div>
+
+    <!-- 三段自然介绍 (杂志式承接) -->
+    <div class="feature-block">
+        <div class="feature-item">
+            <h3><span class="number">01</span> 机制的引力：清晰反馈与渐进安全感</h3>
+            <p>游戏之所以令人沉浸，不在于画面是否华丽，而在于其反馈系统是否精准。每一步操作都能得到即时、可理解的回应，这在大脑层面建立了一种低负担的因果链。玩家在试错中积累经验，形成自己的策略偏好，这种“被理解”的感觉，使游戏成为一种安全的自我表达场域。</p>
+            <p>例如经典解谜或模拟经营作品，从不强迫玩家加速，而是提供一种近乎阅读的节奏。许多人在其中找到的，不是胜负，而是秩序。</p>
+            <span class="insight">◈ 玩家在规则中获得自由</span>
+        </div>
+
+        <div class="feature-item">
+            <h3><span class="number">02</span> 叙事与留白：被允许的想象力</h3>
+            <p>与线性小说不同，游戏的叙事常常由碎片和环境构成。一个残破的笔记、一个沉默的NPC、一段可以被忽略的对话，都在为世界观提供注脚。这种叙事方式留给玩家大量空白，允许个体以自己的方式补完故事。这也是为什么同样一款游戏，不同玩家描述出的体验可能截然不同。</p>
+            <p>好的游戏叙事不垄断解释权，它只提供线索与氛围。当你愿意停下来阅读一段文本，或者观察某个场景的光影变化，你已经在参与创作。</p>
+            <span class="insight">◈ 故事的完整感来自参与而非灌输</span>
+        </div>
+
+        <div class="feature-item">
+            <h3><span class="number">03</span> 重复中的变化：日常仪式与心流</h3>
+            <p>不少人误以为重复等于枯燥，但对真正的爱好者而言，重复动作本身可以成为一种冥想式的日常仪式。无论是每天上线完成固定任务，还是在同一个关卡里尝试不同的路线，这种带有细微变化的重复，恰恰提供了现实生活所稀缺的掌控感与渐进式进步。</p>
+            <p>把游戏行为称为“爱”，是因为它往往超越了功利性的目的。不是为了满级，也不是为了排名，而是为了那一段属于自己的、充满秩序与探索的时间。</p>
+            <span class="insight">◈ 重复不是停滞，是熟悉的节奏里寻找新意</span>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示 — 自然嵌入链接 -->
+    <div class="footer-note">
+        <div class="visit-line">
+            <span>了解更多关于 <a href="https://site-m-igame.com">爱游戏</a> 的议题与脉络</span>
+        </div>
+        <p class="small-quote">“最好的游戏，是那些离开后仍让人回想的体验。”<br>—— 本期专题·编辑手记</p>
+        <div class="meta">基于语境分析与文化观察 · 自由阅读</div>
+    </div>
+
+</div>
+</body>
+</html>
